@@ -1,0 +1,16 @@
+﻿@model MVC_BlogProject.Models.Entities.Tag
+
+@{
+    ViewData["Title"] = "Yeni Etiket Ekle";
+}
+
+<h1>Yeni Etiket Ekle</h1>
+
+<form method="post" asp-action="Create" asp-controller="Tags">
+    <div class="form-group">
+        <label for="Name">Etiket Adı</label>
+        <input type="text" id="Name" name="Name" class="form-control" value="@Model?.Name" placeholder="Etiket adını giriniz" required />
+    </div>
+    <button type="submit" class="btn btn-success mt-3">Ekle</button>
+    <a href="@Url.Action("Index", "Tags")" class="btn btn-secondary mt-3">Geri Dön</a>
+</form>
